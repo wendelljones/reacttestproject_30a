@@ -1,0 +1,18 @@
+.navDiv {
+  display: flex;
+  margin: 20px;
+  padding: 0px;
+  border: 1px solid black;
+}
+
+.navLink a {
+  margin-left: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #500000;
+}
+
+.navImage {
+  width: 75px;
+}
