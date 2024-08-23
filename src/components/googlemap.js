@@ -16,13 +16,15 @@ const center = {
 const markers = [
     {
         position: { lat: 37.780079, lng: -122.420174 },
-        title: "Marker 1",
-        info: "This is the first marker's info window."
+        title: "Golden Gate Bridge",
+        info: "Famed 4,200 ft art deco suspension bridge open to car, bike & foot traffic. ",
+        image: "./images/goldenGate_300x169.jpg",
     },
     {
-        position: { lat: 32.7767, lng: -96.7970 }, // Example coordinates for Dallas, Texas
-        title: "Marker 2",
-        info: "This is the second marker's info window."
+        position: { lat: 32.7767, lng: -96.7970 },
+        title: "Dallas Texas",
+        info: "Dallas, a modern metropolis in north Texas, is a commercial and cultural hub of the region. Downtown’s Sixth Floor Museum at Dealey Plaza commemorates the site of President John F. Kennedy’s assassination in 1963. In the Arts District, the Dallas Museum of Art and the Crow Collection of Asian Art cover thousands of years of art. The sleek Nasher Sculpture Center showcases contemporary sculpture.",
+        image: "./images/dallasSkyline_300x185.jpg",
     }
 ];
 
@@ -43,11 +45,14 @@ function Gmap() {
                     position: marker.position,
                     map: mapRef.current,
                     title: marker.title,
-                    content: `<div class="marker-content">${marker.title}</div>` // Customize the content if needed
+                    content: `<div class="marker-content">${marker.title}</div>`
                 });
 
                 const infoWindow = new google.maps.InfoWindow({
-                    content: `<div><h2>${marker.title}</h2><p>${marker.info}</p></div>`,
+                    content: `
+                            <h2>${marker.title}</h2>
+                            <p>${marker.info}</p>
+                    `,
                 });
 
                 markerElement.addListener("click", () => {
@@ -65,9 +70,14 @@ function Gmap() {
                     map: mapRef.current,
                     title: marker.title,
                 });
-
+                
                 const infoWindow = new google.maps.InfoWindow({
-                    content: `<div><h2>${marker.title}</h2><p>${marker.info}</p></div>`,
+                    content: `
+                    <div class="info-window">
+                    <img src="${marker.image}" />
+                    <h2>${marker.title}</h2>
+                    <p>${marker.info}</p>
+                    </div>`,
                 });
 
                 fallbackMarker.addListener("click", () => {
