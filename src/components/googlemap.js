@@ -16,9 +16,9 @@ const center = {
 const markers = [
     {
         position: { lat: 37.780079, lng: -122.420174 },
-        title: "Golden Gate Bridge",
-        info: "Famed 4,200 ft art deco suspension bridge open to car, bike & foot traffic. ",
-        image: "./images/goldenGate_300x169.jpg",
+        title: "San Francisco",
+        info: "San Francisco is a city in California, located in the northern part of the state between the Pacific Ocean and San Francisco Bay. It's the 4th largest city in California and the 17th largest in the United States, with a population of 873,965 in 2020. San Francisco is known for its unique architecture, steep hills, and the Golden Gate Bridge, and is also the economic and cultural center of the San Francisco Bay Area.",
+        image: "./images/sanFrancisco_300x200.jpg",
     },
     {
         position: { lat: 32.7767, lng: -96.7970 },
@@ -63,7 +63,7 @@ function Gmap() {
                 });
             });
         } else {
-            console.error('AdvancedMarkerElement is not available. Falling back to standard markers.');
+            console.error('I could not us AdvancedMarkerElement because React does not have an import for it');
             markers.forEach(marker => {
                 const fallbackMarker = new google.maps.Marker({
                     position: marker.position,
@@ -89,7 +89,7 @@ function Gmap() {
 
     return (
         <div className="pageTitle">
-            <h1>This is a Google API map</h1>
+            <h1>This is a GoogleMap API</h1>
             <div className="mapbox">
                 <LoadScript
                     googleMapsApiKey={API_KEY}
@@ -98,7 +98,7 @@ function Gmap() {
                     <GoogleMap
                         mapContainerStyle={containerStyle}
                         center={center}
-                        zoom={5.5}
+                        zoom={5}
                         options={{
                             mapId: MAP_ID
                         }}
