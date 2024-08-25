@@ -2,7 +2,15 @@
   display: flex;
   margin: 20px;
   padding: 0px;
-  border: 1px solid black;
+}
+
+.navLink {
+
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: auto 0px;
+  font-size: 25px;
 }
 
 .navLink a {

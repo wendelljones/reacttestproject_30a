@@ -3,3 +3,15 @@
 .homepageText {
     text-align: center;
 }
+
+.homepageDivContent p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.homepageDivContent {
+    width: 50%;
+    text-align: center;
+    margin: auto;
+    padding-top: 20px;
+}
